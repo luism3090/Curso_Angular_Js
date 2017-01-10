@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+</head>
+<body ng-app>
+
+<div>
+	<label for="nombre">Nombre</label>
+	<input type="text" placeholder="escriba su nombre" id="nombre" ng-model="nombre">
+	<br>
+	<label for="color">color</label>
+	<input type="text" placeholder="escriba el color" id="color" ng-model="color">
+</div>
+
+<h2 style="color:{{color}}">Hola {{nombre}}</h2>
+
+</body>
+</html>

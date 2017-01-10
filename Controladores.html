@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Controladores angular JS</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+	<link rel="stylesheet" type="text/css" href="listatareas.css">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script type="text/javascript" src="listatareas.js"></script>
+
+</head>
+
+<body ng-app>
+
+	<div ng-controller="MiListaDeTareas">
+		<ul>
+			<li ng-repeat="tarea in tareas">
+				<input type="checkbox" ng-model="tarea.hecha">
+				<span class="hecho-{{tarea.hecha}}">{{tarea.actividad}}</span>
+			</li>
+		</ul>
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+#container-main
+{
+	width: 70em;
+	margin: 1em auto; 
+}
+
+#container-search
+{
+	margin: 3em 0em; 
+	border:10px solid blue;
+	background-color: #ECE7E7;
+}
+
+#container-search span
+{
+	padding: 7px;
+}
+
+#container-search input
+{
+	display: inline;
+	width:96.6%;
+}
+
+
+#container-table
+{
+	width: 70em;
+	margin: 1em auto; 
+}
+
+#container-table table
+{
+	width: 100%;
+	
+}
+
+#container-table th,#container-table tr
+{
+	border-bottom: 1px solid #ECE7E7;
+
+} 
+
+#container-table td,#container-table th
+{
+	padding:.5em;
+
+} 
+
+

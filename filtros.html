@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Filtros</title>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+
+	<link rel="stylesheet" href="mi_estilos.css">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script src="angular-locale_es-mx.js"></script>
+
+	<script src="filtros.js"></script>
+</head>
+<body ng-app> 
+
+	<section id="container-main">
+		<h1>Filtros Nativos de AngularJS</h1>
+			<div id="container-search" >
+					<span class="glyphicon glyphicon-search" aria-hidden="true" class="input-group-addon"></span>
+					<input type="text" class="form-control" placeholder="Buscar un empleado" id="btnBuscar" ng-model="buscar">
+			</div>
+			<div id="container-table"  ng-controller="tableCustomers">
+				<table>
+					<thead>
+						<th> 
+						<a href="#" ng-click="ordenar('nombre')">Nombre <span class="caret"></span> </a>
+						</th>
+						<th>Apellido Paterno</th>
+						<th>Apellido Materno</th>
+						<th>Primer día de trabajo</th>
+						<th>Teléfono</th>
+						<th>Salario</th>
+						<th>Bono</th>
+					</thead>
+					<tbody>
+						<tr ng-repeat="customer in customers | orderBy:ordenSeleccionado | filter:buscar">
+							<td>{{customer.nombre | uppercase}}</td>
+							<td>{{customer.paterno | uppercase}}</td>
+							<td>{{customer.materno | lowercase}}</td>
+							<td>{{customer.fecha_trabajo | date:'fullDate' }}</td>  
+							<!-- ver mas filtros de fecha https://docs.angularjs.org/api/ng/filter/date -->
+							<!-- ver mas filtros de fecha https://www.adictosaltrabajo.com/tutoriales/filtros-angular/#02 -->
+							<td>{{customer.telefono | limitTo:10}}</td>
+							<td>{{customer.salario | currency:'€'}}</td>
+							<td>{{customer.bono | number:2}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</section>
+	
+</body>
+</html>

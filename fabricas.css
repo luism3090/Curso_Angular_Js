@@ -1,0 +1,31 @@
+#container-main
+{
+	width:60%;
+	margin: 3em auto;
+}
+
+#container-main div
+{
+	margin: 3em auto;
+}
+
+.container-forms > div *
+{
+	display: block;
+}
+
+.container-forms > div input
+{
+	width: 300px;
+}
+
+.container-forms .uno
+{
+	color:#436C9B;
+}
+
+.container-forms .dos
+{
+	color:#9F8585;
+}
+
