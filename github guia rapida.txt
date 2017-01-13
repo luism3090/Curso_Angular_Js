@@ -1,0 +1,303 @@
+--------------- 1. instalar github basch en nuestro sistema operativo  ---------------
+
+
+--------------- 2. abrir la consola de githu y configurar nuestro nombre y email ---------------
+
+git config --global user.name  "Luis Molina"
+git config --global user.email "luisame@outlook.com"
+gir config --global user.color true 
+
+
+---------------  2. irnos hasta nuestra carpeta principal de nuestro proyecto  ---------------
+
+git init            
+git status
+git add nombre_archivo.html
+git add -A
+git commit -m "nombre del commit"
+
+git log                     			verificar los commits hechos
+git log > commits.txt                   verificar los commits hechos en un archivo txt
+
+git checkout 'id commit'                viajar a el estado de un commit 
+git checkout master         			regresar al ultimo commit hecho 
+
+git checkout  8fad7538b8faac6e12c49d5013274b14291610e4
+
+
+--------------------------- 3. borrar commits  ---------------------------------------
+
+git reset  hay 3 tipos 
+
+
+1.  
+
+git reset  --soft              
+
+Este git reset es el mas sencillo no toca nuestra "Working Area" (No se mete con nuetro codigo)
+
+
+2.
+
+git reset --mixed  
+
+Este git reset borra el "Staging Area" sin torca el "Working Area"   (no se usa mucho )
+
+
+3. 
+
+git reset --hard
+
+Este git reset borra absolutamente todo lo que hay en el commit
+
+
+
+------------------------------- 4. help  ---------------------------------
+
+git help 
+
+nos ayuda a obtener informacion de los comandos de git 
+
+git help status
+
+
+Nota :  pulsado la tecla q podemos salir de un comando de git cuando se queda parpareando 
+el cursor
+
+
+
+
+------------------------------ 5. Ramas y fusiones ------------------------------
+
+----- RAMAS  -----
+
+
+-- Conceptos -- 
+
+head:
+
+es el commit donde nos encontramos 
+
+
+rama: 
+
+Es una linea de tiempo en nuestro proyecto, que nos sirve para arreglar errores, experimentar,
+hacer grandes cambios, etc. 
+
+
+rama master: 
+
+Es donde comenzamos a trabajar, es la rama principal y estable de nuestro proyecto
+
+Nota: cuando ejecutamos el comando  ( git init ) se generar por defecto la rama master
+
+
+-- Comandos  --
+
+
+git branch  :  (verificar las ramas que tenemos en nuestro proyecto)
+
+-----
+
+git branch nombre-rama  : ( crear una rama con el nombre que le hayamos colocado )
+
+git branch test
+
+-----
+
+git checkout :  (nos permite movermos de rama en rama )
+
+git checkout test
+
+-----
+
+git branch -D    ( borrar ramas )
+
+git branch -D test
+
+
+------- FUSIONES  -------
+
+Es la creacion de un nuevo commit juntando una rama con otra 
+
+1. seleccionar la rama que va a absorver los cambios de la rama de test o de prueba o experimental etc. 
+
+git checkout master
+
+2. fusionar las ramas 
+
+git merge test 
+
+
+---------
+
+git checkout -b prueba      (creamos una rama y a la vez nos movemos a ella)
+
+
+
+-- conceptos: --
+
+fast-forward : (simple y automatico hace la fusion y no pregunta por conflictos)
+
+Solo va a hacer la fusion, esto pasa normalmente cuando se trabaja con archivos diferentes o lineas
+de código distintas
+
+
+manual-merge :  (pregunta si hay codigo que genera conflictos)
+
+Antes de hacer la fusion tiene que pasar por nosotros, normalmente ocurre cuando se trabaja en los mismos archivos y lineas de codigo
+
+
+
+-----------------------------------  GIT Y GITHUB  ---------------------------------------
+
+Git: es un sistema de control de versiones
+GitHub : es una plataforma web donde nosotros podemos guardar nuestros proyectos, usando git para su gestion   (FACEBOOK DE LOS PROGRAMADORES)
+
+Repositorio : es la traduccion de la palabra proyecto 
+
+Repositorios locales :  son los que tenemos en nuestra camputadora
+
+Repositorios remotos :  son los que tenemos en github
+
+
+--- Comandos ---
+
+git clone : 
+
+(sirve para clonar un proyecto, normalmente, se usa cuando no nos insteresa colaborar en el proyecto )
+
+git clone  "ruta del repositorio a clonar"
+
+git clone https://github.com/jquery/jquery.git
+
+
+git remote : 
+
+(vincula nuestro proyecto local, con nuestro proyecto remoto)
+
+
+git remote add origin https://github.com/luism3090/Curso_Angular_Js.git
+
+git remote add origin https://github.com/luism3090/Curso-Json-w3school.gitorogin
+
+
+(conectado nuestro repositorio local a un repositorio remoto de gitHub)
+
+
+ git remote -v
+
+ (comprobamos los cambios para verificar si salio bien la conexion de nuestro repositorio local al repositorio remoto de GitHub)
+
+
+ git remote remove origin 
+
+ (eliminamos la conexion entre nuestro repositorio local y nuetro repositorio remoto)
+
+
+git push : 
+
+(Nos permite subir nuestros cambios "commits" a GitHub)
+
+git push origin master
+
+(colocamos la palabra origin y seguido de la rama que queremos subir en este caso 
+"master" )
+
+
+
+---------------------- Issues, Milestones y labels ---------------------------------
+
+
+Issues :
+
+son una forma de continuar, mejorar o solucionar un error en nuestros repositorios (proyectos)  (mejorar cosas que tengamos pendientes)
+
+Milestones:
+
+son grupos de issues que aplican para un proyecto, caracteristcas o periodo de tiempo
+
+Labels :
+
+Son una manera de organizar diferentes tipos de problemas
+
+
+
+
+------------------------------- Tags (Eqtiquetas) ---------------------------------------
+
+Tags anotadas :
+
+son alamcenadas como objetos completos dentro de la base de git y contienen mas informacion
+
+git tag -a v0.1 -m "Mensaje"  codigo sha del commit
+
+
+Tags ligeras :
+
+son otra forma de crear tags, mas simples y con poca informacion
+
+git tag v0.1
+
+
+-- Especificando Tags a un commit --
+
+git tag -a v0.1 -m "Version 0.1 del proyecto" 4f26616fabc76ef9b8578442f7e79ab45cdee65a
+
+
+-- subir los tags a GitHub --
+
+git push origin v0.1            // subir por el tag especifico
+
+git push origin --tags          // subir todos los tag creados 
+
+
+
+
+
+
+Nota: 
+
+cambiar el texto de el ultimo commit creado
+
+git commit -amend -m  "nuevo texto"
+
+subirlo a github
+
+git push origin master -f
+
+
+
+
+--------------------------  Workflows Tabajar en equipo ---------------------------------
+
+Para entender mejor como trabajar en equipo ver el siguiente video
+
+https://www.youtube.com/watch?v=VMInoluaZ9o
+
+
+Flujos de trabajo
+
+
+proyectos propios 
+proyectos en equipo
+proeyectos con terceros 
+
+
+
+Proyectos Propios : 
+
+Nosotros somos los dueños, decidimos todo lo que pasa en el repositorio
+
+
+Proyectos en Equipo :
+
+comandos
+
+git fetch
+git merge 
+
+
+
+
+

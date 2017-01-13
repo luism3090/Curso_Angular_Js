@@ -1,6 +1,6 @@
 #container-main
 {
-	width: 60%;
+	width: 62%;
 	margin: 3em auto;
 }
 
@@ -9,9 +9,16 @@
 	margin:3em auto;
 }
 
-#container-main .container-form > *
+#container-main .container-form label
 {
 	display: block;
+	margin: 1em 0em;
+	font-size: 20px;
+}
+
+#container-main .container-form .btn-success
+{
+	display: inline;
 }
 
 #container-main .container-form input
