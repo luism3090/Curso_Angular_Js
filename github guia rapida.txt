@@ -299,5 +299,12 @@ git merge
 
 
 
+descargar los nuevos cambios que estan en github a nuestro repositorio local (pc)
+
+git fetch origin
+
+git merge origin/master
+
+git log
 
 
